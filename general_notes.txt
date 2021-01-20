@@ -1,0 +1,1 @@
+The Class or Module that you are reading documentation for also has methods available to it from the parent. (Whatever methods apply to the Parent also applies to all its children.)
