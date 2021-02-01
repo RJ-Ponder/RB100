@@ -1,10 +1,10 @@
-# RUNAWAY LOOP
+# 1 RUNAWAY LOOP
 loop do
   puts 'Just keep printing...'
   break # my solution and also book solution
 end
 
-# LOOPCEPTION
+# 2 LOOPCEPTION
 loop do
   puts 'This is the outer loop.'
   
@@ -19,7 +19,7 @@ puts 'This is outside all loops.'
 # Note, I first tried solving this with Next.
 # break exits the loop entirely. Next only goes to the next iteration in the loop. Next is not applicable here.
 
-# CONTROL THE LOOP - Modify to iterate 5 times instead of 1
+# 3 CONTROL THE LOOP - Modify to iterate 5 times instead of 1
 iterations = 1
 loop do
   puts "Number of iterations = #{iterations}"
@@ -29,7 +29,7 @@ end
 # I arrived at the book solution without looking. It took a bit because I messed up syntax, putting =+ instead of +=.
 # further exploration, if the break line was moved up, would need >= instead.
 
-# LOOP ON COMMAND
+# 4 LOOP ON COMMAND
 loop do
   puts 'Should I stop looping?'
   answer = gets.chomp
@@ -37,7 +37,7 @@ loop do
   puts "Please enter 'yes' to stop looping."
 end
 
-# SAY HELLO - modify to print hello five times.
+# 5 SAY HELLO - modify to print hello five times.
 say_hello = true
 a = 0
 while say_hello
@@ -48,7 +48,7 @@ while say_hello
 end
 # Could also do 5.times { puts "Hello!" } but that is something completely different.
 
-# PRINT WHILE
+# 6 PRINT WHILE
 # Using a while loop, print 5 random numbers between 0 and 99. The code below shows an example of how to begin solving this exercise.
 numbers = []
 num = Random.new
@@ -58,7 +58,7 @@ end
 
 puts numbers
 
-# COUNT UP
+# 7 COUNT UP
 count = 1
 
 while count <= 10
@@ -74,4 +74,30 @@ until count > 10
   count += 1
 end
 
-# PRINT UNTIL
+# 8 PRINT UNTIL
+# my solution
+numbers = [7, 9, 13, 25, 18]
+
+until numbers.size == 0
+  puts numbers.shift
+end
+
+# book solution (from memory) [This one doesn't mutate the caller. The numbers array is unchanged.]
+numbers = [7, 9, 13, 25, 18]
+
+count = 0
+until count == numbers.size
+  puts numbers[count]
+  count += 1
+end
+
+# 9 THAT'S ODD
+for i in 1..100
+  puts i if i % 2 == 1 # book solution: if i.odd?
+end
+
+# 10 GREET YOUR FRIENDS
+friends = ['Sarah', 'John', 'Hannah', 'Dave']
+for name in friends # book solution: for friend in friends // this makes it clear we are iterating over each element in the array.
+  puts "Hello, #{name}!"
+end
